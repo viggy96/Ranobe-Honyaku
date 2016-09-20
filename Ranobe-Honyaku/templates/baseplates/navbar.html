@@ -1,0 +1,47 @@
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-item is-brand" href="#">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Ranobe-Honyaku logo">
+    </a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item title is-2" href="#">
+      <span>
+            Ranobe-Honyaku
+      </span>
+    </a>
+  </div>
+
+  <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <div class="nav-right nav-menu">
+
+
+    <span class="nav-item">
+      <a class="button" href="/">
+          <span class="icon">
+              <i class="fa fa-home"></i>
+          </span>
+          <span>Home</span>
+      </a>
+      <a class="button" href="{{ setup_file['TWITTER'] }}">
+        <span class="icon">
+          <i class="fa fa-twitter"></i>
+        </span>
+        <span>Twitter</span>
+      </a>
+      <a class="button" href="{{ setup_file['GITHUB'] }}">
+        <span class="icon">
+          <i class="fa fa-github"></i>
+        </span>
+        <span>Github</span>
+      </a>
+    </span>
+
+  </div>
+</nav>

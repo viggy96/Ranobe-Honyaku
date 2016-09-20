@@ -15,9 +15,9 @@ app.register_blueprint(API)
 app.register_blueprint(admin)
 
 
-@app.route("/")
+@app.route(rule="/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", setup_file=setup_file)
 
 # Run our dev server; Remove once app is in production setting!
 app.run(host="localhost", port=5000, debug=True)
