@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from api import API
+from admin import admin
 from utils import setup_file
 
 
@@ -11,5 +12,12 @@ app.secret_key = setup_file["SECRET_KEY"]
 
 # Registering the applications blueprints
 app.register_blueprint(API)
+app.register_blueprint(admin)
 
+
+@app.route("/")
+def home():
+    return render_template("home.html")
+
+# Run our dev server; Remove once app is in production setting!
 app.run(host="localhost", port=5000, debug=True)

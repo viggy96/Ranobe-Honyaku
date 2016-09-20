@@ -1,2 +1,2 @@
 # Website
-The Ranobe-Honyaku website
+The Ranobe-Honyaku website source code.
