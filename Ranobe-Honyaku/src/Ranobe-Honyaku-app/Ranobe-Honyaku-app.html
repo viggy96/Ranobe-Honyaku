@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="Ranobe-Honyaku-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'Ranobe-Honyaku-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'Ranobe-Honyaku-app',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

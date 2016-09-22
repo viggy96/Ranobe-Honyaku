@@ -1,0 +1,7 @@
+{
+  "name": "Ranobe-Honyaku",
+  "short_name": "Ranobe-Honyaku",
+  "description": "A modern replacement for Baka-Tsuki",
+  "start_url": "/",
+  "display": "standalone"
+}
