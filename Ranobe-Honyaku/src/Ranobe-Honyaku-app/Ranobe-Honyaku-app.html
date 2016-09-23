@@ -47,8 +47,8 @@
         @apply(--layout-self-end);
       }
 
-      .tab-container {
-        @apply(--layout-center-justified);
+      .spacer {
+        @apply(--layout-flex);
       }
 
       .header-logo {
@@ -67,8 +67,8 @@
       <paper-scroll-header-panel main>
         <paper-toolbar class="medium-tall">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-          <div class="flex title">Ranobe Honyaku</div>
-
+          <div class="flex">Ranobe Honyaku</div>
+          <div class="spacer"></div>
           <span class="bottom"></span>
           <paper-tabs class="flex bottom self-end" selected="{{selected_tab}}">
             <paper-tab>TAB 1</paper-tab>
