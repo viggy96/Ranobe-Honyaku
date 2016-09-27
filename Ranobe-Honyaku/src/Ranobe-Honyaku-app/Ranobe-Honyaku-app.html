@@ -3,13 +3,20 @@
 <link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
 <link rel="import" href="../../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
 <link rel="import" href="../../bower_components/paper-scroll-header-panel/demo/sample-content.html">
 
+<link rel="import" href="home-tab-content.html">
+<link rel="import" href="settings.html">
+
+
 <dom-module id="Ranobe-Honyaku-app">
-  <template is="dom-bind" id="scope">
+  <template is="dom-bind">
     <style is="custom-style">
       :host {
         display: block;
@@ -21,12 +28,17 @@
         --divider-color: var(--dark-theme-divider-color);
         --error-color: var(--paper-deep-orange-a700);
 
-        --primary-color: var(--paper-blue-600);
-        --light-primary-color: var(--paper-blue-200);
-        --dark-primary-color: var(--paper-blue-800);
+        --primary-color: var(--paper-blue-500);
+        --light-primary-color: var(--paper-blue-100);
+        --dark-primary-color: var(--paper-blue-700);
         --accent-color: var(--paper-pink-a200);
         --light-accent-color: var(--paper-pink-a100);
         --dark-accent-color: var(--paper-pink-a400);
+
+        --paper-font-common-base: {
+          font-family: 'Noto', 'Roboto', Helvetica, sans-serif;
+          -webkit-font-smoothing: antialiased;
+        };
       }
 
       paper-scroll-header-panel {
@@ -58,36 +70,51 @@
     </style>
 
     <paper-drawer-panel force-Narrow>
-      <paper-header-panel drawer>
+      <paper-header-panel shadow drawer>
         <paper-toolbar class="tall header-logo">
           <div class="bottom">Username</div>
         </paper-toolbar>
       </paper-header-panel>
 
       <paper-scroll-header-panel main>
-        <paper-toolbar class="medium-tall">
+        <paper-toolbar shadow class="medium-tall">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
           <div class="flex">Ranobe Honyaku</div>
           <div class="spacer"></div>
           <span class="bottom"></span>
-          <paper-tabs class="flex bottom self-end" selected="{{selected_tab}}">
-            <paper-tab>TAB 1</paper-tab>
-            <paper-tab>TAB 2</paper-tab>
-            <paper-tab>TAB 3</paper-tab>
+          <paper-tabs style="width: 100%;" class="bottom self-end" selected="{{selected_tab}}">
+            <paper-tab>Home</paper-tab>
+            <paper-tab>Featured</paper-tab>
+            <paper-tab>Latest</paper-tab>
           </paper-tabs>
           <span class="bottom"></span>
 
           <paper-icon-button icon="search"></paper-icon-button>
-          <paper-icon-button icon="more-vert"></paper-icon-button>
+          <paper-menu-button>
+            <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
+            <paper-menu class="dropdown-content">
+              <paper-item>Settings</paper-item>
+              <paper-item>Credits</paper-item>
+            </paper-menu>
+          </paper-menu-button>
         </paper-toolbar>
 
 
         <iron-pages selected="{{selected_tab}}">
           <section>
+            <home-tab-content></home-tab-content>
+          </section>
+          <section>
+            <div style="float: left; width: 50%;">
+              <sample-content size="100"></sample-content>
+            </div>
+            <div style="float: right; width: 50%;">
+              <sample-content size="100"></sample-content>
+            </div>
+          </section>
+          <section>
             <sample-content size="100"></sample-content>
           </section>
-          <section></section>
-          <section></section>
         </iron-pages>
 
 
